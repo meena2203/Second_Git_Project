@@ -10,9 +10,8 @@ We further analyzed the data using geospatial mapping and data visualization too
 
 # Methodology
 * Project Data sources:
-[Food Access Dataset](https://www.ers.usda.gov/data-products/food-access-research-atlas/download-the-data/)
-[Food Market Locations](https://overpass-turbo.eu/)
-* Project Wireframe:
+[Food Access Dataset](https://www.ers.usda.gov/data-products/food-access-research-atlas/download-the-data/), [Food Market Locations](https://overpass-turbo.eu/)
+* Project Wireframe
 ![wireframe](static/img/wireframe.png)
 
 ## Dataframe Creation (ETL) (MEEYOUNG)
@@ -21,7 +20,7 @@ We further analyzed the data using geospatial mapping and data visualization too
 
 ### Extraction
 * Imported the FoodAccessResearchAtlasData2019.csv file as a Pandas dataframe 
-* Confirmed a successful import by displaying the dataframe:
+* Confirmed a successful import by displaying the dataframe
 ![Dataframe](static/img/Data%20Extraction.png)
 
 ### Transformation
@@ -37,7 +36,7 @@ We further analyzed the data using geospatial mapping and data visualization too
 Since "Food Access Dataset" is a labeled (LAhalfand10) dataset and has two class labels (0 and 1), we used binary classification supervised machine learning models.
 
 ### DATA LOADING 
-* Data was loaded from AWS and confirmed:
+* Data was loaded from AWS and confirmed
 ![ml_df](static/img/ml_df.png)
 
 ### Data Preproccessing
@@ -56,7 +55,7 @@ Since "Food Access Dataset" is a labeled (LAhalfand10) dataset and has two class
 * Standardized data (X) using StandardScaler function 
 
 ### Model, Fit, Predict
-* Created, trained and scored the following binary classification models to select the best model for our dataset:
+* Created, trained and scored the following binary classification models to select the best model for our dataset
 ![ml_score](static/img/ml_diff_models_score.png)
 ![nn initial score](static/img/NN_initial_scorecard.png)
 * Random forest classifier and neural network models showed the highest accuracy and hence were selected for further optimization
@@ -64,21 +63,21 @@ Since "Food Access Dataset" is a labeled (LAhalfand10) dataset and has two class
 ### Model Optimization
 * Data Addition - 13 more columns were added
 ![df with added columns](static/img/df3.png) 
-* Classification report for bigger Random forest model:
+* Classification report for bigger Random forest model
 ![Alt text](static/img/rfc_col_add_score.png)
-* Accuracy report for bigger Neural Network model:
-* ![NN_final_scorecard](static/img/NN_final_scorecard.png)
+* Accuracy report for bigger Neural Network model
+![NN_final_scorecard](static/img/NN_final_scorecard.png)
 * Feature Importance
 ![fi_plot](static/img/ml_feature_selection_plot.png)
-* Feature Selection Score:
+* Feature Selection Score
 ![fs_score](static/img/ml_feature_selection_score.png)
 
 #### Random Forest Model Hypertunig with GridSearchCV
 * Hypertuning Parameters - to minimize overfitting, max depth and n_estimators were tuned
 ![hypertunig_parameters](static/img/ml_hyperparameter_tuning.png)
-* Tuned model classification report:
+* Tuned model classification report
 ![Alt text](static/img/ml_best_parameter_score.png)
-* Tree plot with best parameter ('max_depth': 7, 'n_estimators': 100):
+* Tree plot with best parameter ('max_depth': 7, 'n_estimators': 100)
 ![Tree plot](static/img/ml_tree.png)
 
 ## Visualizations
